@@ -211,6 +211,7 @@ public class PrincipalATMPanel extends JPanel {
     }
 
     private void message(){
+        principalFrame.revalidate();
         IoManager.showGraphicMessage("Movimiento realizado");
     }
 

@@ -38,11 +38,11 @@ public class ATMBussinesManager implements ContractATM.Model{
 
     public boolean consignMoney(String cc, double amountOfMoney) {
         User user = searchUser(cc);
-        if (searchUser(cc) == null || (user.getAvailableMoney() - amountOfMoney) < 0) {
+        if (user == null || (user.getAvailableMoney() - amountOfMoney) > user.getAvailableMoney()) {
             return false;
         } else {
             addRegister(amountOfMoney, "Dinero transferido");
-            user.setAvailableMoney(amountOfMoney);
+            user.setAvailableMoney(user.getAvailableMoney() + amountOfMoney);
             currentUser.setAvailableMoney(currentUser.getAvailableMoney() - amountOfMoney);
             return true;
         }
