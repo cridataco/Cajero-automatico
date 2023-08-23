@@ -1,10 +1,7 @@
 package co.edu.uptc.views;
 
 import co.edu.uptc.model.User;
-import customview.CButton;
-import customview.CLabel;
-import customview.CPanelUI;
-
+import co.edu.uptc.views.defaultComponents.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

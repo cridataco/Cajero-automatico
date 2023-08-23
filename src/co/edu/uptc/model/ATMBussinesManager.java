@@ -50,7 +50,7 @@ public class ATMBussinesManager implements ContractATM.Model{
 
     public void moneyLoans(double amountOfMoney){
         addRegister(amountOfMoney, "Prestamo de dinero");
-        currentUser.setAvailableMoney(amountOfMoney);
+        currentUser.setAvailableMoney(currentUser.getAvailableMoney() + amountOfMoney);
     }
 
     public double consultMoney(){
@@ -84,7 +84,7 @@ public class ATMBussinesManager implements ContractATM.Model{
 
     private boolean searchUserPerLogin(String userName, String userPassword) {
         for (User user : users) {
-            if (user.getPassword().equals(userName) && user.getPassword().equals(userPassword)) {
+            if (user.getUserName().equals(userName) && user.getPassword().equals(userPassword)) {
                 currentUser = user;
                 return true;
             }
@@ -135,5 +135,10 @@ public class ATMBussinesManager implements ContractATM.Model{
     @Override
     public String getHistory() {
         return GetTransactionSummary();
+    }
+
+    @Override
+    public void changePass(String password) {
+        changePassword(password);
     }
 }

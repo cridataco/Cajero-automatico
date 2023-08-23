@@ -1,4 +1,4 @@
-package customview;
+package co.edu.uptc.views.defaultComponents;
 
 import java.awt.Color;
 

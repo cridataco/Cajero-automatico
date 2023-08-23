@@ -9,6 +9,7 @@ public class PrincipalFrame extends JFrame implements ContractATM.View{
     ContractATM.Presenter presenter;
     private PrincipalATMPanel principalATMPanel;
     private LoginMainPanel mainPanel;
+    private ChangePasswordPanel changePasswordPanel;
 
     public PrincipalFrame() {
         super("ATM");
@@ -22,18 +23,30 @@ public class PrincipalFrame extends JFrame implements ContractATM.View{
     private void initPanels() {
         mainPanel = new LoginMainPanel(this);
         principalATMPanel = new PrincipalATMPanel(this);
+        changePasswordPanel = new ChangePasswordPanel(this);
         this.add(mainPanel);
     }
 
     public void showATMPanel(){
         principalATMPanel.setVisible(true);
         mainPanel.setVisible(false);
+        changePasswordPanel.setVisible(false);
         this.add(principalATMPanel);
         this.setSize(1000, 701);
     }
 
     public void showMainPanel(){
+        this.add(mainPanel);
         mainPanel.setVisible(true);
+        principalATMPanel.setVisible(false);
+        changePasswordPanel.setVisible(false);
+        this.setSize(1000, 700);
+    }
+
+    public void showPasswodPanel(){
+        this.add(changePasswordPanel);
+        changePasswordPanel.setVisible(true);
+        mainPanel.setVisible(false);
         principalATMPanel.setVisible(false);
         this.setSize(1000, 700);
     }
@@ -80,6 +93,10 @@ public class PrincipalFrame extends JFrame implements ContractATM.View{
     }
     public String getHistory(){
         return presenter.getHistory();
+    }
+
+    void changePass(String password){
+        presenter.changePass(password);
     }
 
     public void setMoney(){

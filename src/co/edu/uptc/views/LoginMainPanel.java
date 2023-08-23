@@ -9,18 +9,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-
 import co.edu.uptc.model.User;
-import customview.CButton;
-import customview.CColor;
-import customview.CLabel;
-import customview.CPanelUI;
+import co.edu.uptc.views.defaultComponents.*;
+
 
 public class LoginMainPanel extends JPanel {
 	private static final long serialVersionUID = 1L;

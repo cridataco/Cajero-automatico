@@ -153,6 +153,7 @@ public class PrincipalATMPanel extends JPanel {
         cambioClave.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                principalFrame.showPasswodPanel();
                 currentMoney.setText(String.valueOf(principalFrame.getCurrentMoney()));
             }
         });

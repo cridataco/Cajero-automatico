@@ -20,6 +20,7 @@ public interface ContractATM {
         public boolean signIn2(User user);
         public double getCurrentMoney();
         public String getHistory();
+        void changePass(String password);
     }
 
     public interface Presenter {
@@ -33,5 +34,6 @@ public interface ContractATM {
         public boolean signIn(User user);
         public double getCurrentMoney();
         public String getHistory();
+        void changePass(String password);
     }
 }

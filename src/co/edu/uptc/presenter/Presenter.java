@@ -55,4 +55,9 @@ public class Presenter implements ContractATM.Presenter {
     public String getHistory() {
         return model.getHistory();
     }
+
+    @Override
+    public void changePass(String password) {
+        model.changePass(password);
+    }
 }
